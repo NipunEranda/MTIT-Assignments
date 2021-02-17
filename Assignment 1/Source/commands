@@ -1,0 +1,19 @@
+#creating jar files
+
+first copy bin folder contents from all project folders to the jar folder
+then run
+
+jar cfm example1.jar ../ManifestFiles/LoginServicePublisher.MF loginservicepublisher/
+jar cfm example2.jar ../ManifestFiles/LoginServiceSubscriber.MF loginservicesubscriber/
+
+#run felix
+
+cd felix-framework-7.0.0/
+java -jar bin/felix.jar
+
+#Install jar files in felix
+
+install file:FILEPATH/example1.jar
+
+#start service
+start #id

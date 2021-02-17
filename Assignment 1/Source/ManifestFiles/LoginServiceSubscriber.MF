@@ -1,0 +1,6 @@
+Bundle-Name: Login Client
+Bundle-Description: A bundle that handle login action
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: loginservicesubscriber.LoginServiceActivator
+Import-Package: org.osgi.framework, loginservicepublisher
