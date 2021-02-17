@@ -1,7 +1,12 @@
+#First of all Extract source folder to an easy location
+
+#Create Manifest Files according to labsheet
+
 #creating jar files
 
-first copy bin folder contents from all project folders to the jar folder
-then run
+#first copy bin folder contents from all project folders to the jar folder
+then run these commands. But before run this command, you should configure manifest files and store them in the "ManifestFiles" folder
+
 
 jar cfm example1.jar ../ManifestFiles/LoginServicePublisher.MF loginservicepublisher/
 jar cfm example2.jar ../ManifestFiles/LoginServiceSubscriber.MF loginservicesubscriber/
