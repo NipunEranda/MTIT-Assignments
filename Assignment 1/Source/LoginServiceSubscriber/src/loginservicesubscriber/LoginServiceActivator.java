@@ -21,7 +21,7 @@ public class LoginServiceActivator implements BundleActivator {
 		serviceReference = context.getServiceReference(LoginService.class.getName());
 		@SuppressWarnings("unchecked")
 		LoginService loginService = (LoginService) context.getService(serviceReference);
-		
+		System.out.println(loginService.status());
 		
 	}
 
