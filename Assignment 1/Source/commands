@@ -22,3 +22,6 @@ install file:FILEPATH/example1.jar
 
 #start service
 start #id
+
+To uninstall service
+uninstall #id
