@@ -119,7 +119,7 @@ public class LoginServiceActivator implements BundleActivator {
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		LoginServiceActivator.context = null;
+		//LoginServiceActivator.context = null;
 		System.out.println("GoodBye");
 		context.ungetService(serviceReference);
 	}
