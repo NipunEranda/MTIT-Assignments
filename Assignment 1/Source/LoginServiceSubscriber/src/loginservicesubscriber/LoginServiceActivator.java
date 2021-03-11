@@ -9,7 +9,6 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
-import loginservicepublisher.DataPoint;
 import loginservicepublisher.LoginService;
 
 public class LoginServiceActivator implements BundleActivator {

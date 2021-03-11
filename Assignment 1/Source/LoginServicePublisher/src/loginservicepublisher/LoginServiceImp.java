@@ -8,10 +8,15 @@ import java.util.Scanner;
 
 import javax.xml.crypto.Data;
 
+import datapointpublisher.DataPoint;
+import datapointpublisher.DataPointService;
+import datapointpublisher.DataPointServiceImp;
+import datapointpublisher.User;
+
 public class LoginServiceImp implements LoginService {
 
-	public DataPoint dp;
-
+	Controller c;
+	
 	@Override
 	public String status() {
 		return "success!";
@@ -21,11 +26,8 @@ public class LoginServiceImp implements LoginService {
 	public HashMap<String, String> login(String email, String password) {
 		HashMap<String, String> result = new HashMap<String, String>();
 		try {
-			if (dp == null)
-				dp = new DataPoint();
-			User usr = dp.login(email, password);
+			User usr = c.loginFunction(email, password);
 			if (usr != null) {
-				DataPoint.usr = usr;
 				result.put("status", "success");
 			} else {
 				result.put("status", "error");
@@ -41,7 +43,7 @@ public class LoginServiceImp implements LoginService {
 	public HashMap<String, String> resetPassword(String currentPassword, String newPassword) {
 		HashMap<String, String> result = new HashMap<String, String>();
 		if (DataPoint.usr != null) {
-			if (dp.resetPassword(currentPassword, newPassword, DataPoint.usr.getId()))
+			if (c.resetPasswordFunction(currentPassword, newPassword, DataPoint.usr.getId()))
 				result.put("status", "success");
 			else
 				result.put("status", "error");
@@ -60,8 +62,11 @@ public class LoginServiceImp implements LoginService {
 
 	@Override
 	public boolean removeAccount() {
-		dp.deleteLogin(DataPoint.usr.getId());
+		c.deleteLoginFunction(DataPoint.usr.getId());
 		return false;
 	}
-
+	
+	public LoginServiceImp(DataPointService dataPointService){
+		c = new Controller(dataPointService);
+	}
 }

@@ -1,4 +1,4 @@
-package loginservicepublisher;
+package datapointpublisher;
 
 public class User {
 
