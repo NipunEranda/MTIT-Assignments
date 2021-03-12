@@ -34,9 +34,7 @@ public class Controller {
 	public boolean resetPasswordFunction(String currentPassword, String newPassword, int id) {
 		new DataPoint();
 		if(dpService.getUserRecords().get(id).getPassword().equals(currentPassword)) {
-			User usr = dpService.getUserRecords().get(id);
-			usr.setPassword(newPassword);
-			dpService.getUserRecords().put(id, usr);
+			dpService.getUserRecords().get(id).setPassword(newPassword);
 			DataPoint.updatePassword(id, newPassword);
 			return true;
 		}
