@@ -1,0 +1,6 @@
+Bundle-Name: Registration Client
+Bundle-Description: A bundle that handle Registration action
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: registerservicesubscriber.RegisterServiceActivator
+Import-Package: org.osgi.framework, registerservicepublisher

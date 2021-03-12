@@ -8,8 +8,11 @@
 then run these commands. But before run this command, you should configure manifest files and store them in the "ManifestFiles" folder
 
 
-jar cfm example1.jar ../ManifestFiles/LoginServicePublisher.MF loginservicepublisher/
-jar cfm example2.jar ../ManifestFiles/LoginServiceSubscriber.MF loginservicesubscriber/
+jar cfm loginProducer.jar ../ManifestFiles/LoginServicePublisher.MF loginservicepublisher/
+jar cfm loginConsumer.jar ../ManifestFiles/LoginServiceSubscriber.MF loginservicesubscriber/
+jar cfm registrationProducer.jar ../ManifestFiles/RegistrationServicePublisher.MF registerservicepublisher/
+jar cfm registrationConsumer.jar ../ManifestFiles/RegistrationServiceSubscriber.MF registerservicesubscriber/
+jar cfm dataPointProducer.jar ../ManifestFiles/DataPointProducer.MF datapointpublisher/
 
 #run felix
 
@@ -19,6 +22,13 @@ java -jar bin/felix.jar
 #Install jar files in felix
 
 install file:FILEPATH/example1.jar
+
+install file:/home/nipun/Source/Jar/dataPointProducer.jar
+install file:/home/nipun/Source/Jar/registrationProducer.jar
+install file:/home/nipun/Source/Jar/loginProducer.jar
+
+start file:/home/nipun/Source/Jar/registrationConsumer.jar
+start file:/home/nipun/Source/Jar/loginConsumer.jar
 
 #start service
 start #id

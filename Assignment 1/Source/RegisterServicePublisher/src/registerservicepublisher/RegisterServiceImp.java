@@ -2,6 +2,7 @@ package registerservicepublisher;
 
 import java.util.HashMap;
 
+import datapointpublisher.DataPoint;
 import datapointpublisher.DataPointService;
 import datapointpublisher.User;
 
@@ -10,6 +11,7 @@ public class RegisterServiceImp implements RegisterService{
 	Controller c;
 	
 	public RegisterServiceImp(DataPointService dataPointService){
+		new DataPoint();
 		c = new Controller(dataPointService);
 	}
 
@@ -28,7 +30,7 @@ public class RegisterServiceImp implements RegisterService{
 			}
 			
 			if (user != null) {
-				c.dpService.getUserRecords().put(c.dpService.getUserRecords().size()+1, user);
+				c.register(user);
 				result.put("status", "success");
 			} else {
 				result.put("status", "error");

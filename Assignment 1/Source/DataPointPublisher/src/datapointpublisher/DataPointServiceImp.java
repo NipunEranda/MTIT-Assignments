@@ -3,8 +3,6 @@ package datapointpublisher;
 import java.util.HashMap;
 
 public class DataPointServiceImp implements DataPointService{
-
-	DataPoint dp = new DataPoint();
 	
 	@Override
 	public HashMap<Integer, User> getUserRecords() {
@@ -15,6 +13,11 @@ public class DataPointServiceImp implements DataPointService{
 	public boolean setCurrentUser(User usr) {
 		DataPoint.usr = usr;
 		return true;
+	}
+
+	@Override
+	public int loginCount() {
+		return DataPoint.userRecords.size();
 	}
 
 }

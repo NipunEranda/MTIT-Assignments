@@ -3,5 +3,5 @@ Bundle-Description: A bundle that handle login process
 Bundle-Vendor: Apache Felix
 Bundle-Version: 1.0.0
 Bundle-Activator: loginservicepublisher.LoginServiceActivator
-Import-Package: org.osgi.framework
+Import-Package: org.osgi.framework, datapointpublisher
 Export-Package: loginservicepublisher

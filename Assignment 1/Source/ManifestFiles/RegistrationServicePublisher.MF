@@ -1,0 +1,7 @@
+Bundle-Name: Registration Service
+Bundle-Description: A bundle that handle Registration process
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: registerservicepublisher.RegisterServiceActivator
+Import-Package: org.osgi.framework, datapointpublisher
+Export-Package: registerservicepublisher

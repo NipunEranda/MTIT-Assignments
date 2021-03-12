@@ -17,6 +17,10 @@ public class LoginServiceImp implements LoginService {
 
 	Controller c;
 	
+	public LoginServiceImp(DataPointService dataPointService){
+		c = new Controller(dataPointService);
+	}
+	
 	@Override
 	public String status() {
 		return "success!";
@@ -66,7 +70,5 @@ public class LoginServiceImp implements LoginService {
 		return false;
 	}
 	
-	public LoginServiceImp(DataPointService dataPointService){
-		c = new Controller(dataPointService);
-	}
+	
 }

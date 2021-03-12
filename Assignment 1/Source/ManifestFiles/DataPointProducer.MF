@@ -1,0 +1,7 @@
+Bundle-Name: Data Point Service
+Bundle-Description: A bundle that handle Data Point process
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: datapointpublisher.DataPointActivator
+Import-Package: org.osgi.framework
+Export-Package: datapointpublisher
